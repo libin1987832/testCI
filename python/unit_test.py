@@ -11,7 +11,7 @@ class TestSentence(unittest.TestCase):
         # trans = Translate()
         # out_put1 = trans.start(sent, 'customer')
         # self.assertEqual(str(ss.toJson()), str(out_put1))
-        sent = '我家养了12010100只小鸭'
+        sent = '我家养了22只小鸭'
         # ss = Sentence(sent)
         # ss.process()
         # trans = Translate()
