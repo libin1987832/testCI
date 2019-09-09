@@ -1,0 +1,15 @@
+<title>QBNLP</title>
+<h2 style="color: #11557C;text-align: center">Welcome to use Qianbo NLP_Server !!!</h2>
+<form action="{{ url_for('admin_login') }}" method=post>
+<fieldset>
+<legend>Administration Login:</legend>
+Account:<br>
+<input type="text" name="account">
+<br>
+Password:<br>
+<input type="password" name="password">
+<br><br>
+<input type="submit" value="Login">
+</fieldset>
+    <div>{{ error }}</div>
+</form>

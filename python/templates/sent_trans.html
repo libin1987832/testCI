@@ -1,0 +1,57 @@
+<html>
+<title>sentence trans</title>
+<h2 style="color: #11557C;text-align: center;text-shadow: #5d9c61;">Welcome to use Qianbo NLP_Server</h2>
+<body style="background-color: #eeeeee">
+<br/>
+<h3>Sentence Trans</h3>
+
+<form>
+    Enter sentence:
+    <input type="search" name="sentence" formmethod="post">
+    <input type="submit" value="Trans" formmethod="post">
+</form>
+<div>
+    <div>
+        {% for item in results %}
+            <div>
+                {% if item['State'] == 1 %}
+                    <div style="color: #05ac14;float: left">{{ item['Word'] }}</div>
+                {% elif item['State'] == 2 %}
+                    <div style="color: #679c71;float: left">{{ item['Word'] }}</div>
+                {% elif item['State'] == 3 %}
+                    <div style="color: #50539c;float: left">{{ item['Word'] }}</div>
+                {% elif item['State'] == 4 %}
+                    <div style="color: #9c4648;float: left">{{ item['Word'] }}</div>
+                {% elif item['State'] == 5 %}
+                    <div style="color: #92959c;float: left">{{ item['Word'] }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        </div>
+        <br/>
+        <div>
+            <br/>
+            {% for item in results %}
+                {% if item['State'] == 2 %}
+                    <div style="color: #679c71;float: left">
+                        {{ item['Word'] }}&nbsp:&nbsp
+                        {% for o in item['Other'] %}
+                            <div style="color: #05ac14;float: right">{{ o['Word'] }}</div>
+                        {% endfor %}
+                    </div>
+                    <br>
+                {% elif item['State'] == 3 %}
+                    <div style="color: #50539c;float: left">
+                        {{ item['Word'] }}&nbsp:&nbsp
+                        {% for o in item['Other'] %}
+                            <div style="color: #05ac14;float: right">{{ o['Word'] }}&nbsp&nbsp</div>
+                        {% endfor %}
+                        <br>
+                    </div>
+                {% endif %}
+                </div>
+            {% endfor %}
+
+    </div>
+</body>
+</html>
